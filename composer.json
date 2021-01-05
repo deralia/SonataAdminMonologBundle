@@ -1,10 +1,9 @@
 {
-    "name": "splash/sonata-admin-monolog-bundle",
+    "name": "david-garcia/sonata-admin-monolog-bundle",
     "type": "symfony-bundle",
-    
-    "description": "Provide a Doctrine DBAL handler for Monolog with Sonata Admin Implementation. This Bundle is inspired from LexikMonologBrowserBundle.",
-    "keywords": ["Symfony3", "Symfony4", "bundle", "monolog", "logger", "doctrine", "sonata", "sonata-project", "admin"],
-    "homepage": "https://github.com/splash/SonataAdminMonologBundle",
+    "description": "Fork of SplashSync/SonataAdminMonologBundle with provides a Doctrine DBAL handler for Monolog with Sonata Admin Implementation, ready for Symfony 5 and Sonata Admin 4.",
+    "keywords": ["symfony5", "bundle", "monolog", "logger", "doctrine", "sonata", "sonata-project", "admin"],
+    "homepage": "https://github.com/deralia/SonataAdminMonologBundle",
     "license": "MIT",
     "authors": [
         {
@@ -22,47 +21,42 @@
         {
             "name": "Bernard Paquier",
             "email": "eshop.bpaquier@gmail.com"
+        },
+        {
+            "name": "David Garcia",
+            "email": "me@davidgarcia.cat"
         }
     ],
-    
+    "require": {
+        "php":                                      "^7.2",
+        "doctrine/doctrine-bundle":                 ">=1.6",
+        "monolog/monolog":                          ">=1.24",
+        "sonata-project/admin-bundle":              "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "twig/twig":                                "^2.0"
+    },
+    "require-dev": {
+        "badpixxel/php-sdk":                            "dev-main",
+        "doctrine/orm":                                 "^2.4",
+        "phpunit/phpunit":                              ">6",
+        "sonata-project/user-bundle":                   "dev-master",
+        "symfony/console":                              "*",
+        "symfony/monolog-bundle":                       "*",
+        "symfony/phpunit-bridge":                       "*",
+        "symfony/symfony":                              "^5.0",
+        "symfony/var-dumper":                           "*"
+    },
     "autoload": {
         "psr-4": {
             "Splash\\SonataAdminMonologBundle\\": "src/"
         }
     },
-    
-    "require": {
-        "php":                                      "^7.2",
-        "monolog/monolog":                          "~1.24",
-        "doctrine/doctrine-bundle":                 "~1.6",
-        "sonata-project/admin-bundle":              "~3.0",
-        "sonata-project/doctrine-orm-admin-bundle": "~3.0",
-        "twig/twig":                                "^2.0"
-    },
-    
     "autoload-dev": {
         "psr-4": {
             "Splash\\SonataAdminMonologBundle\\Tests\\": "tests/"
         },
         "classmap": [ "tests/Kernel.php" ]
     },
-    
-    "require-dev": {
-        "symfony/symfony":                              "~4.4",
-        "symfony/monolog-bundle":                       "*",
-        "symfony/phpunit-bridge":                       "*",
-        
-        "sonata-project/user-bundle":                   ">3.0",
-        "symfony/console":                              "*",        
-        "symfony/var-dumper":                           "*", 
-        
-        "phpunit/phpunit":                              ">6",
-        
-        "doctrine/orm":                                 "^2.4",
-
-        "badpixxel/php-sdk":                            "dev-main"
-    },
-    
     "config": {
         "minimum-stability" :   "dev",
         "preferred-install": {
@@ -70,5 +64,4 @@
         },
         "sort-packages": true
     }
-    
 }
